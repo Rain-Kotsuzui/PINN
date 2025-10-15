@@ -54,14 +54,14 @@ if __name__ == '__main__':
     x = 2.0
     t = 3.0
     grid = 100
-    # training_times=5000
-    # thread_matlab = threading.Thread(target=matlab_accsol, args=(nu, x, t, grid))
-    # thread_matlab.start()
+    training_times=5000
+    thread_matlab = threading.Thread(target=matlab_accsol, args=(nu, x, t, grid))
+    thread_matlab.start()
 
-    # thread_PINN = threading.Thread(target=PINN, args=(nu, x, t, grid,training_times))
-    # thread_PINN.start()
+    thread_PINN = threading.Thread(target=PINN, args=(nu, x, t, grid,training_times))
+    thread_PINN.start()
 
-    # thread_matlab.join()
-    # thread_PINN.join()
+    thread_matlab.join()
+    thread_PINN.join()
     print("Max error: ")
     compare()

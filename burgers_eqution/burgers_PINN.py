@@ -143,7 +143,3 @@ def draw(u_pred, x, t):
     plt.show()
     np.save('burgers_PINN', {'x': x, 't': t,
             'u': u_pred})
-
-
-if __name__ == '__main__':
-    sol(0.01, 2.0, 3.0)
