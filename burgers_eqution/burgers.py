@@ -93,7 +93,7 @@ if __name__ == '__main__':
     x = 2.0
     t = 3.0
     grid = 100
-    training_times=5500
+    training_times=3500
     #thread_matlab = threading.Thread(target=matlab_accsol, args=(nu, x, t, grid))
     #thread_matlab.start()
 

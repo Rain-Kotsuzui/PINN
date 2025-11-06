@@ -160,14 +160,32 @@ def l_initial(device, u):
 def sol_we(nu: float, x: float, t: float, grid: int, training_times: int) -> None:
     device = torch.device("cuda")
     print(f"Using device: {device}")
-    #u = FourierNet(input_dims=2, mapping_size=256, scale=0.40).to(device)
-    u = MLP().to(device)
+    u = FourierNet(input_dims=2, mapping_size=256, scale=0.40).to(device)
+    #u = MLP().to(device)
+
     opt = optim.Adam(u.parameters(), lr=1e-3)
 
     # scheduler = optim.lr_scheduler.ExponentialLR(opt, gamma=0.99)
-    omega_pde = 1.0
-    omega_ibc = 15.0
-    omega_rh = 5.0
+
+    # MLP best
+    # omega_pde = 1.0
+    # omega_ibc = 10.0
+    # omega_rh = 1.0
+
+    # reference
+    # omega_pde = 1.0
+    # omega_ibc = 10.0
+    # omega_rh = 10.0
+
+    # Fourier best
+    # omega_pde = 2.0
+    # omega_ibc = 10.0
+    # omega_rh = 1.0
+
+    omega_pde = 2.0
+    omega_ibc = 10.0
+    omega_rh = 1.0
+
     import time
     start_time = time.time()
 
