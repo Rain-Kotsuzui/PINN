@@ -6,3 +6,7 @@ PINN预测解 (训练 `5000` 次)
 
 误差  
 ![error](./error.png)
+
+PINN-WE方法
+![PINN-WE](./PINN-WE.png)
+![error](./error2.png)

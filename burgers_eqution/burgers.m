@@ -22,7 +22,7 @@ function burgers(NU,X,T,grid)
     sol = pdepe(m, @burgers_pde, @burgers_ic, @burgers_bc, x, t, [], nu);
 
     u = sol(:, :, 1);
-    save('burgers_matlab.mat', 'x', 't', 'u');
+    save('burgers.mat', 'x', 't', 'u');
     figure;
     surf(x, t, u);
     shading interp; 
